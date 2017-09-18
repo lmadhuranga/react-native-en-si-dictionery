@@ -23,6 +23,7 @@
     "native-base": "^2.3.1",
     "react": "16.0.0-alpha.12",
     "react-layout": "^1.1.0",
-    "react-native": "^0.47.0"
+    "react-native": "^0.47.0",
+    "react-navigation": "^1.0.0-beta.11"
   }
 }
