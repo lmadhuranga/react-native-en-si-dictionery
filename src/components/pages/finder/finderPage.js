@@ -152,9 +152,12 @@ export default class FinderPage extends Component {
 
                     </Item>
 
-                    <MeanList selectWord={this.selectedWordHandler.bind(this)}
-                              findMean={this.findMean.bind(this)}
-                              means={this.state.means} finder={this.state.finder}/>
+                    <MeanList
+                        selectedWords={this.state.selectedWords}
+                        selectWord={this.selectedWordHandler.bind(this)}
+                        findMean={this.findMean.bind(this)}
+                        means={this.state.means}
+                        finder={this.state.finder}/>
                 </Card>
 
             </Content>

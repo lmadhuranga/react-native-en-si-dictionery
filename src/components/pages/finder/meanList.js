@@ -33,6 +33,7 @@ export default class MeanList extends Component {
                 return (<Mean key={mean}
                               mean={mean}
                               finder={this.props.finder}
+                              selectedWords={this.props.selectedWords}
                               selecteWord={this.selectedWordHandler.bind(this)}
                               findMean={this.findMeanHandler.bind(this)}
                 />);

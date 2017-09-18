@@ -1,14 +1,14 @@
+import _ from "lodash";
 import React, {Component} from 'react';
 import {Text} from 'react-native';
 import {ListItem, Left, Icon, Body, Right, Switch} from 'native-base';
 
 export default class Mean extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isMeanSelected: false
-        }
+    isMeanSelected(word: string, mean: string, selectedWords: any) {
+        //Clog:: console.log(`mad__msg  word ->${word} |mean ->${mean} |selectedWords -> `, selectedWords);
+        if (selectedWords[word]) return !(_.isUndefined(selectedWords[word][mean]));
+        return false;
     }
 
     /**
@@ -48,7 +48,7 @@ export default class Mean extends Component {
                 <Right>
                     <Switch
                         onValueChange={this.toggleMeanHandler.bind(this)}
-                        value={this.state.isMeanSelected}/>
+                        value={this.isMeanSelected(this.props.finder, this.props.mean, this.props.selectedWords)}/>
                 </Right>
             </ListItem>
         );
