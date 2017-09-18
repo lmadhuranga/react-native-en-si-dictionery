@@ -1,3 +1,4 @@
+import _ from "lodash";
 /**
  * Clean the word from white spaces
  * Trim the word
@@ -6,7 +7,7 @@
  */
 export function wordClean(word: string) {
     if (!word) {
-        return null;
+        return '';
     }
     word = word.trim();
     word = word.toLowerCase();
@@ -59,15 +60,38 @@ export function getToday(seperator = '-') {
  * @returns {*}
  */
 export function removeOldWord(text) {
-    word = wordClean(text);
-    if(word==="") return text;
+    let word = wordClean(text);
+    if (word && word.length < 1) return text;
     let spaceIndex = word.indexOf(' ');
     let textLength = word.length;
-    console.log(`madd__msg_ spaceIndex->${spaceIndex}`)
-    console.log(`madd__msg_ textLength->${textLength}`)
-
     if (spaceIndex > -1) {
         return word.substr(spaceIndex + 1, textLength - spaceIndex);
     }
     return text;
+}
+
+/**
+ * Word convert as object
+ * @param word
+ * @returns {string}
+ */
+export function wordAsObj(word: string) {
+    let obj: any = {};
+    obj[word] = word;
+    return obj;
+}
+
+/**
+ * word return as array
+ * @param word
+ * @returns {string}
+ */
+export function wordAsArr(word: string) {
+    let arr: any = [];
+    arr[word] = word;
+    return arr;
+}
+
+export function words2dashed(words: string) {
+    return _.replace(words, ' ', '-');
 }
