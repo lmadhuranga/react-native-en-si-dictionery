@@ -1,5 +1,8 @@
 // React Components
 import React, {Component} from 'react';
+import {Text} from 'react-native';
+
+import {Actions} from 'react-native-router-flux';
 import {
     Content, Card, CardItem, Body, Item, Icon, Input, Button, List, ListItem, H1
 } from 'native-base';
@@ -42,6 +45,11 @@ export default class FavouritePage extends Component {
             <Content>
                 <Card>
                     <H1 rounded>Favourite Words 1</H1>
+                    <Button onPress={() => {
+                        Actions.pop();
+                    }}>
+                        <Text>Goto Page 1</Text>
+                    </Button>
                 </Card>
                 <Card>
                     <FavouriteList
