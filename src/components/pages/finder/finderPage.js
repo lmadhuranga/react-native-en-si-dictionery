@@ -1,5 +1,6 @@
 // React Components
 import React, {Component} from 'react';
+import {Actions} from 'react-native-router-flux';
 import {Text, TextInput, TouchableNativeFeedback, TouchableWithoutFeedback} from 'react-native';
 import {
     Content, Card, CardItem, Body, Item, Icon, Input, Button, List, ListItem
@@ -148,6 +149,12 @@ export default class FinderPage extends Component {
                             placeholder="Search"/>
                         <Button title="Clear" onPress={this.clear.bind(this)}>
                             <Text>Clear</Text>
+                        </Button>
+                        <Button
+                            onPress={() => {
+                                Actions.FavouritePage();
+                            }}>
+                            <Text>Goto Page 2</Text>
                         </Button>
 
                     </Item>
